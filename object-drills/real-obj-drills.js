@@ -71,3 +71,32 @@ for (let i = 0; i < peopleArr.length; i++) {
 }
 
 // cracking the code
+const message = 'craft block argon meter bells brown croon droop';
+const cipher = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+}
+
+function decode(code) {
+  let keysArr = Object.keys(cipher);
+  let decodedLetters = [];
+  let codeArray = code.split(' ');
+  for (let i = 0; i < codeArray.length; i++) {
+    if (codeArray[i][0] === keysArr[i]) {
+      decodedLetters.push(codeArray[i][cipher.a]);
+    } else if (codeArray[i][0] === keysArr[i]){
+      decodedLetters.push(codeArray[i][cipher.b]);
+    } else if (codeArray[i][0] === keysArr[i]) {
+      decodedLetters.push(codeArray[i][cipher.c]);
+    } else if (codeArray[i][0] === keysArr[i]) {
+      decodedLetters.push(codeArray[i][cipher.d]);
+    } else {
+      decodedLetters.push(' ')
+    }
+  }
+  return decodedLetters;
+}
+
+decode(message);
