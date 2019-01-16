@@ -93,10 +93,40 @@ function decode(code) {
     } else if (codeArray[i][0] === keysArr[i]) {
       decodedLetters.push(codeArray[i][cipher.d]);
     } else {
-      decodedLetters.push(' ')
+      decodedLetters.push(' ');
     }
   }
   return decodedLetters;
 }
 
 decode(message);
+
+
+// factory function with LOTR
+
+// { nickname: 'gandalf', race: 'Wizard', origin: 'Middle Earth', attack: 10, defense: 6 },
+//     { nickname: 'bilbo', race: 'Hobbit', origin: 'The Shire', attack: 2, defense: 1}
+
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  const newChar = {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    describe: function () {
+      console.log(`${newChar.name} is a ${newChar.race} from ${newChar.origin}`);
+    },
+    evaluateFight: function () {
+      `Your opponent (${newChar.attack} - ${newChar.defense}).`;
+    }
+  };
+
+  const characters = [
+    newChar
+  ];
+  console.log(characters);
+}
+
+createCharacter('bilbo baggins', 'bilbo', 'hobbit', 'the shire', 2, 1);
