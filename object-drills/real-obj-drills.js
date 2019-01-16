@@ -104,9 +104,6 @@ decode(message);
 
 // factory function with LOTR
 
-// { nickname: 'gandalf', race: 'Wizard', origin: 'Middle Earth', attack: 10, defense: 6 },
-//     { nickname: 'bilbo', race: 'Hobbit', origin: 'The Shire', attack: 2, defense: 1}
-
 function createCharacter(name, nickname, race, origin, attack, defense) {
   return {
     name,
@@ -118,20 +115,22 @@ function createCharacter(name, nickname, race, origin, attack, defense) {
     describe: function() {
       return `${name} is a ${race} from ${origin}`;
     },
-    evaluateFight: function() {
-      return `Your opponent (${this.attack} - ${this.defense}).`;
-    }
+    evaluateFight: function(character) { 
+      let x = character.defense > this.attack ? 0 : this.attack - character.defense;
+      let y = this.defense > character.attack ? 0 : character.attack - this.defense;
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;},
   };
 }
 
-const characters = [
-  
-];
+const characters = [];
 
+characters.push(createCharacter('bilbo baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1));
+characters.push(createCharacter('Gandalf the White', 'gandalf', 'wizard', 'Middle Earth', 10, 6));
+characters.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
+characters.push(createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8));
 
-const bilbo = characters.push(createCharacter('bilbo baggins', 'bilbo', 'hobbit', 'the shire', 2, 1));
-const gandalf = characters.push(createCharacter('Gandalf the White', 'gandalf', 'wizard', 'Middle Earth', 10, 6));
-const frodo = characters.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
-const aragorn = characters.push(createCharacter('Aragorn son of Arathorn'));
-
-//bilbo.evaluateFight(gandalf);
+console.log(characters.find((character) => character.nickname === 'aragorn').describe());
+const hobbitResult = characters.filter((character) => character.race === 'Hobbit');
+console.log(hobbitResult);
+const strongChars = characters.filter((character) => character.attack > 5);
+console.log(strongChars);
