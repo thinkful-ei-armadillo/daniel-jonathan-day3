@@ -43,12 +43,31 @@ console.log(foods.meals[3]);
 
 // Arrays of objects
 
+// const peopleArr = [
+//   { name: 'Bob Marley', jobTitle: 'Musician' },
+//   { name: 'Jon Hopkins', jobTitle: 'Doctor'},
+//   { name: 'Fred Has', jobTitle: 'Car Salesman'}
+// ];
+
+// for (let i = 0; i < peopleArr.length; i++) {
+//   console.log(`name: ${peopleArr[i].name} job title: ${peopleArr[i].jobTitle}`);
+// }
+
+// properties that aren't there
+
 const peopleArr = [
-  { name: 'Bob Marley', jobTitle: 'Musician' },
-  { name: 'Jon Hopkins', jobTitle: 'Doctor'},
+  { name: 'Bob Marley', jobTitle: 'Musician', boss: 'Chad Person'},
+  { name: 'Jon Hopkins', jobTitle: 'Doctor', boss: 'Chad Person'},
   { name: 'Fred Has', jobTitle: 'Car Salesman'}
 ];
 
 for (let i = 0; i < peopleArr.length; i++) {
-  console.log(`name: ${peopleArr[i].name} job title: ${peopleArr[i].jobTitle}`);
+  if ( !peopleArr[i].boss ) {
+    console.log(`${peopleArr[i].jobTitle} ${peopleArr[i].name} doesn't report to anybody.`);
+  }
+  else {
+    console.log(`${peopleArr[i].jobTitle} ${peopleArr[i].name} reports to ${peopleArr[i].jobTitle}.`);
+  }
 }
+
+// cracking the code
