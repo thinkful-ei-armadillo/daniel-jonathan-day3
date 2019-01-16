@@ -35,7 +35,7 @@ function personMaker() {
   return person;
 }
 
-// 
+// key deleter
 const sampleObj = {
   foo: 'foo',
   bar: 'bar',
@@ -48,3 +48,17 @@ function keyDeleter(obj) {
   delete obj.bar;
   return obj;
 }
+
+// make student reports
+
+function makeStudentsReport(data) {
+  const nameGradesArr = [];
+  for ( let i = 0; i < data.length; i++ ) {
+    nameGradesArr.push(`${data[i].name}: ${data[i].grade}`);
+  }
+  console.log(nameGradesArr);
+  return nameGradesArr;
+}
+
+// enroll in summer school
+
