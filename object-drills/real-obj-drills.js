@@ -77,7 +77,7 @@ const cipher = {
   b: 2,
   c: 3,
   d: 4,
-}
+};
 
 function decode(code) {
   let keysArr = Object.keys(cipher);
