@@ -44,5 +44,11 @@ console.log(foods.meals[3]);
 // Arrays of objects
 
 const peopleArr = [
-  { name: 'Bob Marley', jobTitle: 'Musician' }
-]
+  { name: 'Bob Marley', jobTitle: 'Musician' },
+  { name: 'Jon Hopkins', jobTitle: 'Doctor'},
+  { name: 'Fred Has', jobTitle: 'Car Salesman'}
+];
+
+for (let i = 0; i < peopleArr.length; i++) {
+  console.log(`name: ${peopleArr[i].name} job title: ${peopleArr[i].jobTitle}`);
+}
