@@ -34,3 +34,15 @@ for (const key in obj1) {
 }
 
 // Arrays in objects
+
+const foods = {
+  meals: [ 'breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper' ]
+}
+
+console.log(foods.meals[3]);
+
+// Arrays of objects
+
+const peopleArr = [
+  { name: 'Bob Marley', jobTitle: 'Musician' }
+]
