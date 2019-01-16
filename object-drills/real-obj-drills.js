@@ -21,4 +21,16 @@ console.log(loaf.flour, loaf.water);
 console.log(loaf.hydration());
 
 // object iteration drill
+const obj1 = {
+  foo: 'foo',
+  bar: 'bar',
+  fum: 'fum',
+  quux: 'quux',
+  spam: 'spam'
+};
 
+for (const key in obj1) {
+  console.log(`${key}: ${obj1[key]}`);
+}
+
+// Arrays in objects
