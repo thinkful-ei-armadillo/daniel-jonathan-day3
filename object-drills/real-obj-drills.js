@@ -108,25 +108,30 @@ decode(message);
 //     { nickname: 'bilbo', race: 'Hobbit', origin: 'The Shire', attack: 2, defense: 1}
 
 function createCharacter(name, nickname, race, origin, attack, defense) {
-  const newChar = {
+  return {
     name,
     nickname,
     race,
     origin,
     attack,
     defense,
-    describe: function () {
-      console.log(`${newChar.name} is a ${newChar.race} from ${newChar.origin}`);
+    describe: function() {
+      return `${name} is a ${race} from ${origin}`;
     },
-    evaluateFight: function () {
-      `Your opponent (${newChar.attack} - ${newChar.defense}).`;
+    evaluateFight: function() {
+      return `Your opponent (${this.attack} - ${this.defense}).`;
     }
   };
-
-  const characters = [
-    newChar
-  ];
-  console.log(characters);
 }
 
-createCharacter('bilbo baggins', 'bilbo', 'hobbit', 'the shire', 2, 1);
+const characters = [
+  
+];
+
+
+const bilbo = characters.push(createCharacter('bilbo baggins', 'bilbo', 'hobbit', 'the shire', 2, 1));
+const gandalf = characters.push(createCharacter('Gandalf the White', 'gandalf', 'wizard', 'Middle Earth', 10, 6));
+const frodo = characters.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
+const aragorn = characters.push(createCharacter('Aragorn son of Arathorn'));
+
+//bilbo.evaluateFight(gandalf);
