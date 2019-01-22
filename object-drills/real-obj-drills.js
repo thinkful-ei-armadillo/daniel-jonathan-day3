@@ -104,33 +104,33 @@ decode(message);
 
 // factory function with LOTR
 
-// function createCharacter(name, nickname, race, origin, attack, defense) {
-//   return {
-//     name,
-//     nickname,
-//     race,
-//     origin,
-//     attack,
-//     defense,
-//     describe: function() {
-//       return `${name} is a ${race} from ${origin}`;
-//     },
-//     evaluateFight: function(character) { 
-//       let x = character.defense > this.attack ? 0 : this.attack - character.defense;
-//       let y = this.defense > character.attack ? 0 : character.attack - this.defense;
-//       return `Your opponent takes ${x} damage and you receive ${y} damage`;},
-//   };
-// }
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    describe: function() {
+      return `${name} is a ${race} from ${origin}`;
+    },
+    evaluateFight: function(character) { 
+      const x = character.defense > this.attack ? 0 : this.attack - character.defense;
+      const y = this.defense > character.attack ? 0 : character.attack - this.defense;
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;},
+  };
+}
 
-// const characters = [];
+const characters = [];
 
-// characters.push(createCharacter('bilbo baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1));
-// characters.push(createCharacter('Gandalf the White', 'gandalf', 'wizard', 'Middle Earth', 10, 6));
-// characters.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
-// characters.push(createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8));
+characters.push(createCharacter('bilbo baggins', 'bilbo', 'Hobbit', 'the shire', 2, 1));
+characters.push(createCharacter('Gandalf the White', 'gandalf', 'wizard', 'Middle Earth', 10, 6));
+characters.push(createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2));
+characters.push(createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8));
 
-// console.log(characters.find((character) => character.nickname === 'aragorn').describe());
-// const hobbitResult = characters.filter((character) => character.race === 'Hobbit');
-// console.log(hobbitResult);
-// const strongChars = characters.filter((character) => character.attack > 5);
-// console.log(strongChars);
+console.log(characters.find((character) => character.nickname === 'aragorn').describe());
+const hobbitResult = characters.filter((character) => character.race === 'Hobbit');
+console.log(hobbitResult);
+const strongChars = characters.filter((character) => character.attack > 5);
+console.log(strongChars);
